@@ -24,9 +24,11 @@ function prefilterData(data, gameName) {
         data['2'] = data['2'].replace(',', '.')
         data['2'] = data['2'].replace(/\+/g, '')
         data['2'] = data['2'].replace(' EUR de envío', '')
+        data['2'] = data['2'].replace(' EUR shipping', '')
         data['2'] = data['2'].replace(' estimado', '')
         data['2'] = data['2'].replace('Envío no especificado', '0')
         data['2'] = data['2'].replace('Envío gratis', '0')
+        data['2'] = data['2'].replace('Free shipping', '0')
         data['2'] = data['2'].replace('Envío internacional gratis', '0')
         data['sendingPrice'] = parseFloat(data['2'])
         delete data['2']
